@@ -1,0 +1,18 @@
+[package]
+name = "dex-api"
+version = "0.1.0"
+authors = [
+    ["Sharabesh Ramesh <sharabesh@berkeley.edu>"] 
+
+]
+build = "build.rs"
+
+
+[dependencies]
+libcontract-common = { path = "../../../libcontract/common", default-features = false }
+sgx_tstd = { git = "https://github.com/ekiden/rust-sgx-sdk", optional = true }
+protobuf = { version = "1.4.2", optional = true }
+protobuf-sgx = { git = "https://github.com/ekiden/rust-protobuf", optional = true }
+
+[build-dependencies]
+libcontract-utils = { path = "../../../libcontract/utils" }

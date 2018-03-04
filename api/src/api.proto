@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package dex;
+
+message dexState {
+    /* TODO: Initialization step is set to 4. Unclear if this should remain */ 
+    map<uint64,map<string,uint64>> sell_orders  = 1;
+    map<uint64,map<string,uint64>> purchase_orders = 2;
+    map<uint64,map<string,uint64>> accounts = 3;
+}
+
+message TransferRequest {
+    /* The parameters for placing an order */ 
+    uint64 user_account_address = 2;
+    string token_type = 3;
+    string to_token_type = 4;
+    uint64 from_amount = 5;
+    uint64 to_amount = 6; 
+
+    
+}
+
+message TransferResponse {
+}
+/* TODO: Verify that a create request takes no parameters */ 
+
+message CreateRequest {
+}
+
+message CreateResponse {
+}
+
+message GetBalanceRequest {
+    uint64 user_account_address = 1; 
+    string token_type; 
+}
+
+message GetBalanceResponse {
+    uint64 balance = 1;
+}
+
+
