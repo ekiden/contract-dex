@@ -1,4 +1,4 @@
-dex_api! {
+rpc_api! {
     metadata {
         name = dex_contract;
         version = "0.1.0";
